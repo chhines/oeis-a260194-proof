@@ -1,5 +1,7 @@
 # Disproof of the Jump Universality Conjecture for OEIS A260194
 
+**Palomar registration.** This proof passed Palomar’s independent mechanical verification and cleared its automated editorial review. That editorial review was automated. [PALOMAR-2026-11-27-000063, version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-27-000063&version=1) records the theorem at commit [`018fca5`](https://github.com/chhines/oeis-a260194-proof/tree/018fca55d64d6946fef1fbea7e94167d51778110).
+
 Let the first three terms be 1 and let each subsequent term add the gcd of the current term and the term two places earlier. The positive difference 14 never occurs. This repository proves the negative answer to the question of whether every positive integer occurs.
 
 ## Statement to audit
