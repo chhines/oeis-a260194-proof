@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
 version: "v0.4"
 project:
-  name: "A missing positive difference in OEIS A260194"
+  name: "Disproof of the Jump Universality Conjecture for OEIS A260194"
   description: "The sequence starts with three ones and adds the gcd of its current term and its term two places earlier. A finite modular invariant confines its positive jumps to a set of 34 integers and excludes 14. This disproves the assertion that every positive integer occurs as a difference."
   authors:
     - "Colton Hines"

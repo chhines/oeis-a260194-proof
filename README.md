@@ -1,4 +1,4 @@
-# A missing positive difference in OEIS A260194
+# Disproof of the Jump Universality Conjecture for OEIS A260194
 
 Let the first three terms be 1 and let each subsequent term add the gcd of the current term and the term two places earlier. The positive difference 14 never occurs. This repository proves the negative answer to the question of whether every positive integer occurs.
 
