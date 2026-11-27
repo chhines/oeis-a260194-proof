@@ -101,12 +101,20 @@ jobs:
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           build: false
+      - name: Provide memory headroom for doc-gen4
+        run: |
+          sudo fallocate -l 6G /mnt/a260194-docs.swap
+          sudo chmod 600 /mnt/a260194-docs.swap
+          sudo mkswap /mnt/a260194-docs.swap
+          sudo swapon /mnt/a260194-docs.swap
+          sudo sysctl -w vm.overcommit_memory=1
       - name: Build doc-gen4 output
         working-directory: docbuild
         env:
           MATHLIB_NO_CACHE_ON_UPDATE: "1"
           DISABLE_EQUATIONS: "1"
           DOCGEN_SRC: github
+          LEAN_NUM_THREADS: "2"
         run: lake build A260194:docs
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
