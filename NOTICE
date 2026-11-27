@@ -1,0 +1,7 @@
+The recurrence and quantified question in Challenge.lean are adapted from
+FormalConjectures/OEIS/260194.lean, Copyright 2026 The Formal Conjectures
+Authors, licensed under Apache-2.0. The theorem here gives the negative
+resolution. Source revision 2f91d251c07fbbaf9435166d47c11e884a08a6cf.
+
+Project scaffolding, CI and verifier scripts are adapted from PalomarTemplate
+revision 2891de4c48955af824969a263d31b25e7a9a1406 under Apache-2.0.

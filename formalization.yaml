@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "A missing positive difference in OEIS A260194"
+  description: "The sequence starts with three ones and adds the gcd of its current term and its term two places earlier. A finite modular invariant confines its positive jumps to a set of 34 integers and excludes 14. This disproves the assertion that every positive integer occurs as a difference."
+  authors:
+    - "Colton Hines"
+    - "OpenAI ChatGPT (Codex research agent)"
+  responsible_maintainers: ["Colton Hines"]
+  license: Apache-2.0
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11B37", "11B83"]
+sources:
+  - title: "A finite modular invariant for the jumps of OEIS A260194"
+    type: original-proof
+    relationship: other
+    note: "The result and formal proof were developed in the project from which this repository is ported."
+  - title: "OEIS A260194"
+    authors: ["Franklin T. Adams-Watters"]
+    location: "https://oeis.org/A260194"
+    relationship: background
+    note: "Source of the recurrence and the positive-difference question."
+  - title: "A GCD-Driven Sequence with Universal Jumps"
+    authors: ["The Formal Conjectures Authors"]
+    location: "https://github.com/google-deepmind/formal-conjectures/blob/2f91d251c07fbbaf9435166d47c11e884a08a6cf/FormalConjectures/OEIS/260194.lean"
+    relationship: background
+    license: Apache-2.0
+    note: "Source of the zero-based recurrence and the quantified proposition being negated."
+related_formalizations:
+  - id: "https://github.com/google-deepmind/formal-conjectures/blob/2f91d251c07fbbaf9435166d47c11e884a08a6cf/FormalConjectures/OEIS/260194.lean"
+    relationship: adapts
+    note: "The independent Challenge mirrors the catalogue definition and states the negative answer."
+status:
+  scope: "The compared result is the negation of universality for the specified initial conditions. The development proves that 14 is absent. Exact attainment of every member of the bounding set and minimal period length are outside the compared theorem."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+automation:
+  methods:
+    - method: agent
+      models: ["OpenAI GPT-6.2 Astra (original research, as identified by the user)", "OpenAI Codex (submission preparation)"]
+      framework: "ChatGPT Work Mode"
+      tool_setup: "AI-generated mathematical arguments, Python certificate construction, Lean tactics and kernel-reduced certificate checks."
+      cost:
+        wall_time: "Not tracked"
+        spend_usd: "Subscription-based; per-task cost not tracked"
+        hardware: "Hosted execution environment"
+      prompting_notes: "Colton Hines selected the question, directed the research, requested adversarial checks, and supplied a determinant-one reformulation for investigation."
+  spend_usd: "Subscription-based; per-task cost not tracked"
+  notes: "The agent discovered the finite invariant, generated the certificate, wrote the proofs and manuscript, and prepared this port. Hines's credit is for the research direction and contributions described above. No independent human verification or level of understanding is claimed."
+fidelity:
+  divergences: "The recursion and quantifier domains are the same as the cited zero-based formulation. The theorem deliberately negates its entire positive-difference proposition to express the negative resolution. The two initial zero differences are included in the quantification over indices."
+review:
+  status: self-assessed
+  reviewers: []
+  notes: "Automated statement comparison and internal AI-assisted review only. No named independent human referee or registry endorsement."
+alignment:
+  namespace: JumpResearch
+  statements:
+    - source: "OeisA260194.conjecture (negative resolution)"
+      lean: "JumpResearch.refutesCatalogueStatement"
+      module: Solution
+      status: proved
+      note: "Negates the original statement under the compared OEIS sequence definition JumpResearch.a."
+acknowledgements: "Franklin T. Adams-Watters posed the question. The Formal Conjectures Authors supplied its catalogue formulation. This project uses Lean, Mathlib, and the Palomar starter template."
