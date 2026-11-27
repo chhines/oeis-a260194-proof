@@ -35,6 +35,16 @@ lake build
 
 The Comparator script follows the pinned template and registers both bundled independent kernels. The workflow also validates the metadata, checks the licence, and generates API documentation. See PORTING.md for changes from the original Lean 4.19 proof. The registry form takes the full 40-character SHA of a public commit. [Palomar submission form](https://submit.palomar-registry.org/)
 
+## Research significance
+
+This result resolves a previously stated open question concerning OEIS A260194, also catalogued in Google DeepMind's Formal Conjectures project.
+
+Beyond establishing that the positive difference 14 never occurs, the formal development proves that the sequence's jumps are bounded by 74 and are eventually periodic.
+
+The proof uses a finite modular abstraction and an inductively closed certificate to establish global properties of an unbounded arithmetic recurrence. This approach may be relevant to the study of other GCD-driven sequences and the application of formal verification techniques to arithmetic dynamical systems.
+
+The development does not establish a general theorem guaranteeing the applicability of this method to other recurrences.
+
 ## Provenance and review
 
-Colton Hines selected the question, directed the investigation and supplied the proposed determinant-one reformulation. The OpenAI agent discovered the invariant and generated the certificate, Lean proofs, manuscript and submission port. Human contributions are recorded as research direction and input. Independent human mathematical review and editorial acceptance are unconfirmed. The project uses Apache-2.0 as supplied by the Palomar template. See NOTICE and formalization.yaml.
+Chhines selected the question, directed the investigation and supplied the proposed determinant-one reformulation. The OpenAI agent discovered the invariant and generated the certificate, Lean proofs, manuscript and submission port. Human contributions are recorded as research direction and input. Independent human mathematical review and editorial acceptance are unconfirmed. The project uses Apache-2.0 as supplied by the Palomar template. See NOTICE and formalization.yaml.
